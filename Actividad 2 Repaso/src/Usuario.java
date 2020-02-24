@@ -18,12 +18,14 @@ public class Usuario {
 				"6- Borrar pelicula por id\r\n" + 
 				"7- Salir de la aplicación");
 		//-------Crear-Peliculas------
-		Peliculas Peli1,Peli2,Peli3;
+		Peliculas Peli1,Peli2 = null,Peli3 = null;
 	
 		Peli1 = new Peliculas("P1", "BlackHat, Amenaza en la red", "Michael Mann", "Thriller, Acción|Crimen", 2015);
 		Peli1 = new Peliculas("P2", "The Imitation Game(Descifrando Enigma)","Morten Tyldum", "Thriller, Drama|Biográfico", 2014);
 		Peli1 = new Peliculas("P3", "Avengers Endgame", "Anthony Russo, Joe Russo (Hrmns Russo)", "Ciencia Ficción, Acción|Superheroes", 2019);
-	
+		listaPeliculas.add(Peli1);
+		listaPeliculas.add(Peli2);
+		listaPeliculas.add(Peli3);
 		//-----Interaccion-Usuario-----
 		Scanner teclado = new Scanner(System.in);
 		int Boton = teclado.nextInt();
