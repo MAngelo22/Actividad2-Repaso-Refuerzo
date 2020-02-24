@@ -1,9 +1,13 @@
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import Actividad1.Avion;
 
 public class Usuario {
 
 	public static void main(String[] args) {
 		
+		ArrayList<Peliculas> listaPeliculas = new ArrayList<Peliculas>();
 		//--------Menu--------
 		System.out.println(
 				"Selecciona :\r\n"+
@@ -29,6 +33,7 @@ public class Usuario {
 		String Texto = null;
 		switch (Boton) {
 			case 1:
+				
 				Texto = "Has pulsado 1";
 				break;
 			case 2:
