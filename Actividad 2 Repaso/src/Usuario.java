@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Actividad1.Avion;
 
 public class Usuario {
 
@@ -31,12 +30,29 @@ public class Usuario {
 	
 		//-----Funciones-Botones-------
 		String Texto = null;
+		if (Boton >=1 && Boton<=7) {
 		switch (Boton) {
 			case 1:
+				Peliculas PeliUser;
+				System.out.println("Creando pelicula:\r\n"+"Introduzca un ID: ");
+				String IDu = teclado.next();
+
+				System.out.println("Introduzca un Titulo: ");
+				String titulou = teclado.next();
+
+				System.out.println("Introduzca uno o varios Director/es: ");
+				String Directoru = teclado.next();
+
+				System.out.println("Introduzca genero: ");
+				String Generou = teclado.next();
 				
-				Texto = "Has pulsado 1";
+				System.out.println("Introduzca un año: ");
+				int añoEstrenou = teclado.nextInt();
+				
+				PeliUser = new Peliculas(IDu , titulou , Directoru , Generou , añoEstrenou);
 				break;
 			case 2:
+				System.out.println(listaPeliculas);
 				Texto = "Has pulsado 2";
 				break;
 			case 3:
@@ -55,10 +71,10 @@ public class Usuario {
 				Texto = "Has pulsado 7";
 				break;
 		}System.out.println(Texto);
-	
-	
-	
-	
+		}else {
+			System.out.println("Has salido del programa");
+		}
+		
 	}
 
 }
