@@ -49,6 +49,6 @@ public class Peliculas {
 		this.añoEstreno = añoEstreno;
 	}
 	public String toString() {
-		return (ID+" Nombre: "+ titulo + " Dirigida por: "+ director +" Genero: "+genero+" Estranada: "+añoEstreno);
+		return (ID+" Nombre: "+ titulo + " Dirigida por: "+ director +" Genero: "+genero+" Estrenada: "+añoEstreno);
 	}
 }

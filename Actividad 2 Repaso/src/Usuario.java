@@ -7,32 +7,35 @@ public class Usuario {
 	public static void main(String[] args) {
 		
 		ArrayList<Peliculas> listaPeliculas = new ArrayList<Peliculas>();
-		//--------Menu--------
-		System.out.println(
-				"Selecciona :\r\n"+
-				"1- Alta de pelicula\r\n" + 
-				"2- Listar Pelicula\r\n" + 
-				"3- Buscar Pelicula por id\r\n" + 
-				"4- Buscar pelicula por titulo\r\n" + 
-				"5- Buscar Peliculas por genero\r\n" + 
-				"6- Borrar pelicula por id\r\n" + 
-				"7- Salir de la aplicación");
 		//-------Crear-Peliculas------
-		Peliculas Peli1,Peli2 = null,Peli3 = null;
+		Peliculas Peli1,Peli2,Peli3;
+		int Boton=0;
 	
 		Peli1 = new Peliculas("P1", "BlackHat, Amenaza en la red", "Michael Mann", "Thriller, Acción|Crimen", 2015);
-		Peli1 = new Peliculas("P2", "The Imitation Game(Descifrando Enigma)","Morten Tyldum", "Thriller, Drama|Biográfico", 2014);
-		Peli1 = new Peliculas("P3", "Avengers Endgame", "Anthony Russo, Joe Russo (Hrmns Russo)", "Ciencia Ficción, Acción|Superheroes", 2019);
+		Peli2 = new Peliculas("P2", "The Imitation Game(Descifrando Enigma)","Morten Tyldum", "Thriller, Drama|Biográfico", 2014);
+		Peli3 = new Peliculas("P3", "Avengers Endgame", "Anthony Russo, Joe Russo (Hrmns Russo)", "Ciencia Ficción, Acción|Superheroes", 2019);
 		listaPeliculas.add(Peli1);
 		listaPeliculas.add(Peli2);
 		listaPeliculas.add(Peli3);
 		//-----Interaccion-Usuario-----
-		Scanner teclado = new Scanner(System.in);
-		int Boton = teclado.nextInt();
+
 	
 		//-----Funciones-Botones-------
-		String Texto = null;
-		if (Boton >=1 && Boton<=7) {
+		String Texto = "";
+		do {
+			//--------Menu--------
+			System.out.println(
+					"Selecciona :\r\n"+
+					"1- Alta de pelicula\r\n" + 
+					"2- Listar Pelicula\r\n" + 
+					"3- Buscar Pelicula por id\r\n" + 
+					"4- Buscar pelicula por titulo\r\n" + 
+					"5- Buscar Peliculas por genero\r\n" + 
+					"6- Borrar pelicula por id\r\n" + 
+					"7- Salir de la aplicación");
+			Scanner teclado = new Scanner(System.in);
+			Boton = teclado.nextInt();
+		//for (int i=Boton; Boton >=1 && Boton<=7; i++) {
 		switch (Boton) {
 			case 1:
 				Peliculas PeliUser;
@@ -52,31 +55,55 @@ public class Usuario {
 				int añoEstrenou = teclado.nextInt();
 				
 				PeliUser = new Peliculas(IDu , titulou , Directoru , Generou , añoEstrenou);
+				listaPeliculas.add(PeliUser);
 				break;
 			case 2:
-				System.out.println(listaPeliculas);
-				Texto = "Has pulsado 2";
+				for (Peliculas films : listaPeliculas) {
+					System.out.println(films.toString());
+				}
 				break;
 			case 3:
-				Texto = "Has pulsado 3";
+				System.out.println("Introduce el Id a buscar:");
+				String idABuscar = teclado.next();
+				for(Peliculas i : listaPeliculas) {
+					if(idABuscar.equals(i.getID())) {
+						System.out.println(i.toString());}}
 				break;
 			case 4:
-				Texto = "Has pulsado 4";
+				System.out.println("Introduce el Titulo a buscar:");
+				String TituloABuscar = teclado.next();
+				for(Peliculas e : listaPeliculas) {
+					if(TituloABuscar.equals(e.getTitulo())) {
+						System.out.println(e.toString());}}
 				break;
 			case 5:
-				Texto = "Has pulsado 5";
+				System.out.println("Introduce el Genero a buscar:");
+				String GeneroABuscar = teclado.next();
+				for(Peliculas a : listaPeliculas) {
+					if(GeneroABuscar.equals(a.getGenero())) {
+						System.out.println(a.toString());}}
 				break;
 			case 6:
-				Texto = "Has pulsado 6";
+				System.out.println("Introduce el ID a borrar:");
+				String IDABorrar = teclado.next();
+				for(Peliculas peli : listaPeliculas) {
+					String id = peli.getID();
+					if(IDABorrar.equals(id)){
+						listaPeliculas.remove(peli);
+					}}
 				break;
 			case 7:
 				Texto = "Has pulsado 7";
 				break;
-		}System.out.println(Texto);
-		}else {
-			System.out.println("Has salido del programa");
+			default:
+				System.out.println("Numero no valido(entre 1 y 7)");
 		}
+			System.out.println(Texto);
+		}while (Boton != 7); 	
+		System.out.println("Has salido del programa");
 		
 	}
+	
+	
 
 }
