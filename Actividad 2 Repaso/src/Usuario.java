@@ -11,15 +11,12 @@ public class Usuario {
 		Peliculas Peli1,Peli2,Peli3;
 		int Boton=0;
 	
-		Peli1 = new Peliculas("P1", "BlackHat, Amenaza en la red", "Michael Mann", "Thriller, Acción|Crimen", 2015);
-		Peli2 = new Peliculas("P2", "The Imitation Game(Descifrando Enigma)","Morten Tyldum", "Thriller, Drama|Biográfico", 2014);
-		Peli3 = new Peliculas("P3", "Avengers Endgame", "Anthony Russo, Joe Russo (Hrmns Russo)", "Ciencia Ficción, Acción|Superheroes", 2019);
+		Peli1 = new Peliculas("P1", "BlackHat, Amenaza en la red", "Michael Mann", "Thriller|Crimen", 2015);
+		Peli2 = new Peliculas("P2", "The Imitation Game(Descifrando Enigma)","Morten Tyldum", "Thriller|Biográfico", 2014);
+		Peli3 = new Peliculas("P3", "Avengers Endgame", "Anthony Russo, Joe Russo (Hrmns Russo)", "Ciencia Ficción|Superheroes", 2019);
 		listaPeliculas.add(Peli1);
 		listaPeliculas.add(Peli2);
 		listaPeliculas.add(Peli3);
-		//-----Interaccion-Usuario-----
-
-	
 		//-----Funciones-Botones-------
 		String Texto = "";
 		do {
@@ -33,6 +30,7 @@ public class Usuario {
 					"5- Buscar Peliculas por genero\r\n" + 
 					"6- Borrar pelicula por id\r\n" + 
 					"7- Salir de la aplicación");
+			//-----Interaccion-Usuario-----
 			Scanner teclado = new Scanner(System.in);
 			Boton = teclado.nextInt();
 		//for (int i=Boton; Boton >=1 && Boton<=7; i++) {
