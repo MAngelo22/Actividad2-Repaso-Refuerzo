@@ -34,7 +34,7 @@ public class Usuario {
 			//-----Interaccion-Usuario-----
 			Scanner teclado = new Scanner(System.in);
 			Boton = teclado.nextInt();
-		//for (int i=Boton; Boton >=1 && Boton<=7; i++) {
+		
 		switch (Boton) {
 			case 1:
 				Peliculas PeliUser;
