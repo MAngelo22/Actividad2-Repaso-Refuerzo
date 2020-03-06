@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 
@@ -82,13 +83,17 @@ public class Usuario {
 						System.out.println(a.toString());}}
 				break;
 			case 6:
+				Peliculas peliBorrar;
 				System.out.println("Introduce el ID a borrar:");
 				String IDABorrar = teclado.next();
-				for(Peliculas peli : listaPeliculas) {
-					String id = peli.getID();
-					if(IDABorrar.equals(id)){
-						listaPeliculas.remove(peli);
-					}}
+				
+				Iterator<Peliculas> iteradorPelis = listaPeliculas.iterator(); 
+				while(iteradorPelis.hasNext()) {
+					Peliculas peliBorra = iteradorPelis.next();
+					if(peliBorra.getID().equals(IDABorrar)) {
+						iteradorPelis.remove();
+					}
+				}
 				break;
 			case 7:
 				Texto = "Has pulsado 7";
